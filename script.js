@@ -74,7 +74,7 @@ let product = {
     }
 }
 
-// console.log(product.finalPrice());
+console.log(product.finalPrice());
 
 // ⸻
 
@@ -124,24 +124,10 @@ d. No structure → messy and difficult to manage as objects increase.
 // 	7.	Create a Student class whose constructor accepts name and roll number.
 // Add a method introduce that prints both values.
 
-// class Student{
-//     constructor(name, rollNo){
-//         this.name = name;
-//         this.rollNo = rollNo;
-//     }
-
-//     introduce(){
-//         console.log(`${this.name} roll no is ${this.rollNo}`)
-//     }
-// }
-
-// S1 = new Student("Mannt", 15281)
-// S1.introduce()
-
 class Student{
     constructor(name, rollNo){
-        name = name;
-        rollNo = rollNo;
+        this.name = name;
+        this.rollNo = rollNo;
     }
 
     introduce(){
@@ -149,7 +135,7 @@ class Student{
     }
 }
 
-S1 = new Student("Mannt", 15281)
+S1 = new Student("Mannat", 15281)
 S1.introduce()
 
 // 	8.	Inside the constructor, set values using this.
@@ -250,12 +236,40 @@ console.log(comp1.logout === comp2.logout);
 // ⸻
 
 // SECTION 5: call, apply, bind
+// The goal is to understand how this can be manually controlled.
+
 // 	13.	Create a function that prints this.name.
 // 	14.	Create an object that contains a name property.
 
 // Use call to run the function using the object
 // Use apply to run the function using the object
 // Use bind to create a new function and then call it
+
+function Try(a,b,c){
+    console.log(this.name, a, b, c)
+}
+
+let TryObj = {
+    name: "Mannat"
+}
+
+Try.call(TryObj, 1, 2, 3)
+Try.apply(TryObj, [1, 2, 3])
+
+let func = Try.bind(TryObj, 1, 2, 3)
+func()
+
 // 	15.	Borrow a method from one object and run it for another object using call.
 
-// The goal is to understand how this can be manually controlled.
+let ob1 = {
+    name: "Mannat",
+    greet: function () {
+        console.log("Hello, " + this.name);
+    }
+};
+
+let ob2 = {
+    name: "Gupta"
+};
+
+ob1.greet.call(ob2);
