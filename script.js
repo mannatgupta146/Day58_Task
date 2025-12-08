@@ -119,17 +119,82 @@ d. No structure → messy and difficult to manage as objects increase.
 // ⸻
 
 // SECTION 3: Constructor and this keyword
+// The goal is to clearly understand how this works and when it changes.
+
 // 	7.	Create a Student class whose constructor accepts name and roll number.
 // Add a method introduce that prints both values.
+
+// class Student{
+//     constructor(name, rollNo){
+//         this.name = name;
+//         this.rollNo = rollNo;
+//     }
+
+//     introduce(){
+//         console.log(`${this.name} roll no is ${this.rollNo}`)
+//     }
+// }
+
+// S1 = new Student("Mannt", 15281)
+// S1.introduce()
+
+class Student{
+    constructor(name, rollNo){
+        name = name;
+        rollNo = rollNo;
+    }
+
+    introduce(){
+        console.log(`${this.name} roll no is ${this.rollNo}`)
+    }
+}
+
+S1 = new Student("Mannt", 15281)
+S1.introduce()
+
 // 	8.	Inside the constructor, set values using this.
 // Then try removing this and notice what error occurs and why.
+class Student1{
+    constructor(name, rollNo){
+        name = name;
+        rollNo = rollNo;
+
+        /*
+        These lines do not store values in the object.
+        They only assign the parameter to itself, which has no effect.
+        
+        Because the object never gets properties name and rollNo,
+        this.name and this.rollNo remain undefined.
+        */
+    }
+
+    introduce(){
+        console.log(`${this.name} roll no is ${this.rollNo}`)
+    }
+}
+
+S1 = new Student1("Mannt", 15281)
+S1.introduce()
+
+// undefined roll no is undefined
+
 // 	9.	Create an object with two methods:
 // One method using a normal function
 // One method using an arrow function
 
 // Inside both, print this and observe the difference.
 
-// The goal is to clearly understand how this works and when it changes.
+let obj = {
+    normal: function(){
+        console.log(this)
+    },
+    arrow: ()=>{
+        console.log(this)
+    }
+}
+
+obj.normal()
+obj.arrow()
 
 // ⸻
 
