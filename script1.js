@@ -195,8 +195,7 @@ obj.arrow()
 function u1(){
     this.login = function () {
         console.log("hello");
-    };
-    
+    };  
 }
 
 u11 = new u1()
