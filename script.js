@@ -199,14 +199,53 @@ obj.arrow()
 // ⸻
 
 // SECTION 4: Constructor Functions and Prototypes
+// The purpose here is to understand how prototypes help share behavior efficiently.
+
 // 	10.	Create a User constructor function (do not use class syntax).
 // 	11.	Add a login method in two ways:
 // First, inside the constructor
 // Then, move the method to the prototype
+
+function u1(){
+    this.login = function () {
+        console.log("hello");
+    };
+    
+}
+
+u11 = new u1()
+u11.login()
+
+function u2(){}
+
+u2.prototype.login = function () {
+    console.log("hello");
+};
+    
+
+u22 = new u2()
+u22.login()
+
+
 // 	12.	Create two User objects and compare their login methods using equality.
 // Explain why the result is true or false.
 
-// The purpose here is to understand how prototypes help share behavior efficiently.
+function Compare(name) {
+    this.name = name;
+    this.login = function () {
+        console.log("log in");
+    };
+}
+
+Compare.prototype.logout = function () {
+    console.log("log out");
+};
+
+let comp1 = new Compare("aa");
+let comp2 = new Compare("bb");
+
+console.log(comp1.login === comp2.login); 
+console.log(comp1.logout === comp2.logout); 
 
 // ⸻
 
