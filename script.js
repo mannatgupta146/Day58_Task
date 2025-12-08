@@ -74,18 +74,47 @@ let product = {
     }
 }
 
-console.log(product.finalPrice());
+// console.log(product.finalPrice());
 
 // ⸻
 
 // SECTION 2: Classes and Objects
+
 // 	4.	Create a Car class with the following:
 // brand
 // speed
 // a drive method that prints the car brand and speed
+
+class Car{
+    constructor(brand,speed){
+        this.brand = brand;
+        this.speed = speed;
+    }
+
+    drive(){
+        console.log(`${this.brand} speed is ${this.speed}`)
+    }
+}
+
+C1 = new Car("bmw","150")
+C1.drive()
+
 // 	5.	Create two different car objects from the same class and verify that their data is different.
+
+C2 = new Car("tata","120")
+C2.drive()
+
 // 	6.	Answer this in your own words:
 // If classes did not exist, how would you write this logic and what problems might occur when the project becomes large?
+
+/*
+Problems in a large project:
+
+a. Repetitive code → same properties and methods copied again and again.
+b. Hard to update → changing one method means updating it in every object.
+c. More chances of errors → inconsistent code across objects.
+d. No structure → messy and difficult to manage as objects increase.
+*/
 
 // ⸻
 
