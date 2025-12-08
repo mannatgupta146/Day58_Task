@@ -1,11 +1,80 @@
 // SECTION 1: Objects and OOPS Thinking (Foundation)
+// The goal of this section is to understand why keeping data and behavior together makes code easier to manage.
+
 // 	1.	Create a user object that stores name and email and has a login method which prints “User logged in”.
+
+let user1 = {
+    name: "Mannat Gupta",
+    email: "mannatgupta146@gmail.com",
+    login: function(){
+        console.log("logged in")
+    }
+}
+
+let user2 = {
+    name: "Mannat Gupta",
+    email: "mannatgupta146@gmail.com",
+    login: function(){
+        console.log("logged in")
+    }
+}
+
+let user3 = {
+    name: "Mannat Gupta",
+    email: "mannatgupta146@gmail.com",
+    login: function(){
+        console.log("logged in")
+    }
+}
+
+let user4 = {
+    name: "Mannat Gupta",
+    email: "mannatgupta146@gmail.com",
+    login: function(){
+        console.log("logged in")
+    }
+}
+
+let user5 = {
+    name: "Mannat Gupta",
+    email: "mannatgupta146@gmail.com",
+    login: function(){
+        console.log("logged in")
+    }
+}
+
 // 	2.	Imagine you now have 5 users.
 // First, think how you would manage them without using a class.
 // Then convert the same logic using a class and observe how the code becomes cleaner. Write code for both approaches.
+
+class User{
+    constructor(name, email){
+        this.name = name;
+        this.email = email;
+    }
+    login(){
+        console.log("logged in")
+    }
+}
+
+U1 = new User("Aarav Sharma", "aarav.sharma01@gmail.com");
+U2 = new User("Mannat Gupta", "mannat.gupta16@gmail.com");
+U3 = new User("Ishita Verma", "ishita.verma22@gmail.com");
+U4 = new User("Rohan Mehta", "rohan.mehta09@gmail.com");
+U5 = new User("Saanvi Kapoor", "saanvi.kapoor11@gmail.com");
+
+
 // 	3.	Create a product object that stores name and price and has a method which returns the final price after discount.
 
-// The goal of this section is to understand why keeping data and behavior together makes code easier to manage.
+let product = {
+    name : "mobile phone",
+    price: 34000,
+    finalPrice: function(){
+        return this.price - 200;
+    }
+}
+
+console.log(product.finalPrice());
 
 // ⸻
 
