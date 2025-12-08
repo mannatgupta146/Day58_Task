@@ -1,8 +1,49 @@
 // SECTION 1: OOPS Thinking with Objects
 // 	1.	Create an object called laptop that contains brand, price, and a start method that prints “Laptop started”.
 // 	2.	Add one more method to the same object that increases the price by 10 percent.
+
+let laptop = {
+	brand: "HP",
+	price: 50000,
+	start(){
+		console.log("Laptop started");
+	},
+	increase(){
+		console.log(this.price * 110/100)
+	}
+}
+
+laptop.increase()
+
 // 	3.	Now imagine you need 10 laptops with same structure but different data.
 // Write down (in words or code) what problems you will face if you keep using plain objects.
+
+class Laptop{
+	constructor(brand,price){
+		this.brand = brand
+		this.price = price
+	}
+
+	start(){
+		console.log("Laptop started");
+	}
+
+	increase(){
+		console.log(this.price * 110/100)
+	}
+}
+
+L1 = new Laptop("hp", 40000)
+L2 = new Laptop("dell", 50000)
+
+/*
+Problems when using plain objects for 10 laptops:
+
+a. Repetitive code → You must rewrite brand, price, start(), increase() for every laptop.
+b. Hard to maintain → If one method changes, you must update it in all 10 objects manually.
+c. More chances of errors → Copy-paste mistakes will happen easily.
+d. No structure → Objects become messy, unorganized, and difficult to manage as project grows.
+*/
 
 // ⸻
 
