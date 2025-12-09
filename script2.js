@@ -191,6 +191,28 @@ objects, making the code more efficient and easier to maintain.
 // 	21.	Use call to execute showBrand for both objects.
 // 	22.	Explain what problem call is solving here.
 
+function showBrand(){
+	console.log(this.brand)
+}
+
+b1 = {
+	brand: 'hp'
+}
+
+b2 = {
+	brand: 'dell'
+}
+
+showBrand.call(b1)
+showBrand.call(b2)
+
+/*
+The call method lets us use the same function for different objects by manually 
+setting this. Without call, showBrand would not know which object's brand to 
+print. call allows us to borrow a function and run it as if it belonged to 
+another object.
+*/
+
 // ⸻
 
 // SECTION 7: apply Method Practice
@@ -199,6 +221,21 @@ objects, making the code more efficient and easier to maintain.
 // 	25.	Use apply to call introduce using the object and an array of arguments.
 // 	26.	Explain in simple words how apply differs from call.
 
+function introduce(city, role){
+	console.log(`role of ${this.name} is ${role} in ${city}` )
+}
+
+i1 = {
+	name: "person1"
+}
+
+i2 = {
+	name: "person2"
+}
+
+introduce.apply(i1, ['place1', 'role1'])
+introduce.apply(i2, ['place2', 'role2'])
+
 // ⸻
 
 // SECTION 8: bind Method Practice
@@ -206,3 +243,28 @@ objects, making the code more efficient and easier to maintain.
 // 	28.	Bind this function to an object and store the returned function in a variable.
 // 	29.	Call the bound function later and observe the output.
 // 	30.	Explain why bind is useful when functions are executed later or inside callbacks.
+
+function greet(){
+	console.log(`hello ${this.name}`)
+}
+
+g1 ={
+	name: "name1"
+}
+
+g2 ={
+	name: "name2"
+}
+
+let fnc1 = greet.bind(g1)
+fnc1()
+
+let fnc2 = greet.bind(g2)
+fnc2()
+
+/*
+bind is useful because it permanently sets the value of this for a function. 
+Even if the function is called later or passed as a callback, it will still 
+use the object we bound it to. Without bind, this would change based on how 
+and where the function is executed.
+*/
