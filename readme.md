@@ -1,4 +1,4 @@
-# Day 58 Task | Cohort 2.0 – Object-Oriented Programming (OOPS) in JavaScript
+# Day 58 Task | Cohort 2.0
 
 This repository contains all the JavaScript exercises completed as part of **Day 58** in **Sheryians Coding School Cohort 2.0**.  
 The focus was to understand OOPS concepts such as **Objects, Classes, Constructors, Prototypes, `this` keyword, call/apply/bind**, and writing cleaner reusable code.
